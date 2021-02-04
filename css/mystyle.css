@@ -1,0 +1,190 @@
+:root{
+    --blue: rgb(28, 28, 73);
+    --black: rgb(24, 3, 3);
+    --white: white;
+    box-sizing: border-box;
+}
+
+*{
+    box-sizing: inherit;
+}
+
+body{
+    background-color: var(--white); 
+    border: solid 5px black;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    border-radius: 10px;
+}
+img {
+    width: 100%;
+}
+#myHeader{
+    display: grid;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+#myHeader h3 {
+    padding: 16px;
+    font-size: 1.5em;
+    margin: 0;
+    z-index: 1000;
+}
+#myHeader #myNavbar{
+    background-color: pink;
+    position: absolute;
+    margin: 55px 5px;
+    width: 92%;
+    padding: 0 15px;
+    display: none;
+}
+#myHeader #myNavbar ul {
+    list-style-type: none;
+    margin: 10px;
+    padding: 0px;
+}
+#myHeader #myNavbar ul li{
+    list-style: none;
+    padding: 5px 0;
+}
+#myHeader #myNavbar ul li a{
+    text-decoration: none;
+    color: var(--white);
+    font-size: 1.2em;
+    font-weight: bold;
+    display: flex   ;
+}
+#myHeader #myNavbar ul li a:hover{
+    background-color: rgba(128, 128, 128, 0.301);
+    padding: 5px;
+    border-radius: 4px;
+}
+#hamburgerButton{
+    background:transparent;
+    border: none;
+    color: var(--blue);
+   
+    /* background-color: blueviolet; */
+}
+#hamburgerButton .hamburger{
+    background-color: var(--blue);
+    border-radius: 5px;
+    padding:4px 4px;
+    margin: 12px 23px;
+    width: 40px;
+}
+#contain{
+    display: grid;
+}
+#contain, #myFooter{
+    padding: 16px;
+}
+#contain #learnJapanese > h1 {
+    font-size: 2.4em;
+}
+#learnJapaneseButton{
+    background-color: var(--blue);
+    color: var(--white);
+    border: none;
+    padding: 8px;
+    font-size: 1em;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+#myFooter{
+    display: grid;
+    grid-gap: 28px;
+    padding-top: 43px;
+}
+#myFooter img {
+    width: 36%;
+}
+.footer-img{
+    display: flex;
+    justify-content: center;
+}
+/* Responsive */
+@media screen and (min-width: 768px){
+    #myHeader{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        margin: 0;
+    }
+    #myHeader #myNavbar{
+        display: block !important;
+        background-color: transparent;
+        position: static;
+        height: 10px;
+        padding: 0;
+        margin: 0;
+    }
+    #myHeader #myNavbar ul{
+        display: flex;
+       justify-content: flex-end;
+    }
+    #myHeader #myNavbar ul li{
+        margin: 0 12px;
+    }
+    #myHeader #myNavbar ul li a{
+        color: var(--black);
+    }
+    #myHeader #myNavbar ul li button{
+        background-color: transparent;
+        border: solid 1px black;
+    }
+    #hamburgerButton{
+        display: none;
+    }
+    #learnJapaneseButton{
+        margin: 0;
+        margin-top: -4%;
+    }
+    #contain{
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px;
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    #myFooter{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    #myFooter img {
+        width: 25%;
+        padding-bottom: 22px;
+    }
+    .footer-img{
+        justify-content: start;
+    }
+}
+@media screen and (min-width: 1200px){
+    body{
+        margin: 70px 250px;
+        border-radius: 20px;
+        height: 80px;
+        min-height: 78vh;
+        max-height: 100vh;
+        /* max-height: 80vh; */
+        padding: 12px 110px;
+    }
+    #contain{
+        padding:0;
+    }
+    #contain #containBg .imgBg{
+        width: 23em; 
+    }
+    #contain, #myFooter{
+        padding: 16px;
+    }
+    #myFooter{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    #myFooter img {
+        width: 25%;
+        /* padding-bottom: 22px; */
+    }
+    .footer-img{
+        justify-content: start;
+    }
+}
